@@ -14,7 +14,7 @@
         <td><%= patient.name %></td>
         <td>
           <a href="">List Appointments<a/>
-            <%= link_to "List Appointments", new_patient_appointment path(patient) %> 
+            <%= link_to "List Appointments", new_patient_appointment_path(patient) %> 
         <%= link_to 'Show', patient %>
         <%= link_to 'Edit', edit_patient_path(patient) %>  
         <%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %>

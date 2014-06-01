@@ -1,2 +1,8 @@
-<h1>Appointments#index</h1>
+<h1><%= @patient.name %></h1>
 <p>Find me in app/views/appointments/index.html.erb</p>
+
+<ul class="appointments">
+  <% @patients.appointments.each do |appointment| %>
+  <li><%= appointment.content %></li>
+  <ul>
+    
