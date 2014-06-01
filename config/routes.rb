@@ -1,6 +1,8 @@
 Scheduler::Application.routes.draw do
-  resources :patients
-
+  resources :patients do
+    resources :appointments
+  end
+  root 'patients#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
