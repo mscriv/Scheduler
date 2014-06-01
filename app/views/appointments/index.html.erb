@@ -1,8 +1,12 @@
 <h1><%= @patient.name %></h1>
-<p>Find me in app/views/appointments/index.html.erb</p>
 
 <ul class="appointments">
   <% @patients.appointments.each do |appointment| %>
-  <li><%= appointment.content %></li>
-  <ul>
+  <li><%= appointment.date %></li>
+  <li><%= appointment.hour %></li>
+  </ul>
     
+<p>
+  <%= link_to "Appointment", new_patient_appointment_path %>
+  
+</p>  

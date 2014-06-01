@@ -1,0 +1,11 @@
+<%= form_for [@patient, @appointment] do |form|
+  <%= form.label :date %>
+  <%= form.text_field :date %>
+
+  <%= form.label :hour %>
+  <%= form.text_field :hour %>
+
+  <%= form.submit "Save" %>
+<% end %>
+
+
