@@ -1,14 +1,14 @@
-<h2><%= @patient.name %></h2>
+<h4><%= @patient.name %></h4>
 
 
   <% @patient.appointments.each do |appointment| %>
  
-    <h3>Date <%= appointment.date %></h3>
-    <h3>Time <%= appointment.time %></h3>
+    <p>Date <%= appointment.date %></p>
+    <p>Time <%= appointment.time %></p>
  _____________________________________________________
 
     <% end %>
 
 <p>
-  <%= link_to "Schedule an Appointment", new_patient_appointment_path %>
+  <button type="button" class="btn btn-success"><%= link_to "New Appointment", new_patient_appointment_path %></button>
 </p>  

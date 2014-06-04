@@ -1,9 +1,9 @@
-<h1>Listing patients</h1>
+<h4>Patients</h4>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <p>Name</p>
       <th></th>
     </tr>
   </thead>
@@ -11,14 +11,17 @@
   <tbody>
     <% @patients.each do |patient| %>
       <tr>
-        <td><%= patient.name %></td>
-        <td>
-        <%= link_to "List Appointments", patient_appointments_path(patient) %>
-        <%= link_to "Schedule an Appointment", new_patient_appointment_path(patient) %> 
-        <%= link_to 'Show', patient %>
-        <%= link_to 'Edit', edit_patient_path(patient) %>  
-        <%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+        <h5><%= patient.name %></h5>
+        <ul>
+          <Strong>Options</strong>
+          <li><%= link_to 'Show', patient %></li>
+          <li><%= link_to 'Edit', edit_patient_path(patient) %></li>  
+          <li><%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          <Strong>Appointments</strong>
+          <li><%= link_to "View ", patient_appointments_path(patient) %></li>
+          <li><%= link_to "Schedule", new_patient_appointment_path(patient) %></li> 
+        _______________________________________________________________________________________________
+        </ul>
       </tr>
     <% end %>
   </tbody>
