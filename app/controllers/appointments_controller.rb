@@ -13,7 +13,7 @@ class AppointmentsController < ApplicationController
     @appointment = @patient.appointments.new(appointment_params)
     if @appointment.save
       flash[:success] = "Added new appointment."
-      redirect_to patient_appointment_path
+      redirect_to patient_appointments_path
     else
       flash[:error] = "There was a problem adding that appointment."
       render action: :new
@@ -22,5 +22,6 @@ class AppointmentsController < ApplicationController
   
   private
   def appointment_params
-    params[:appointment].permit(:hour, :date)
+    params[:appointment].permit(:date, :time)
+  end
 end
