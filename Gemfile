@@ -11,6 +11,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'twitter-bootstrap-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-timepicker-rails'
+gem 'jquery-turbolinks'
+gem 'less-rails'
+gem 'therubyracer'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

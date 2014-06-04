@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
-  $('#appointment_date').datepicker ({
+  $('#appointment_date').datepicker({
     dateFormat: 'mm-dd-yy'
    minDate: +1 });
 
