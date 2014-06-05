@@ -5,6 +5,11 @@
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
+
+<div>
+  <button type="button" class="btn btn-default"><%= link_to 'Add Patient', new_patient_path %></button>
+</div>
+
     <% @patients.each do |patient| %>
    <p>   
    <h5><%= patient.name %></h5>
@@ -19,10 +24,8 @@
           <strong>Appointments:</strong>   
     <div>
     <button type="button" class="btn btn-default"><%= link_to "View ", patient_appointments_path(patient) %></button>
-    <button type="button" class="btn btn-default"><%= link_to "New Appointment", new_patient_appointment_path(patient) %></button>
+      <button type="button" class="btn btn-default"><%= link_to "New Appointment", new_patient_appointment_path(patient) %></button>
    </div>    
+______________________________________________________________________________________
     <% end %>
   
-<div>
-    <button type="button" class="btn btn-primary btn-sm"><%= link_to 'New Patient', new_patient_path %></button>
-</div>
