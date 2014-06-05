@@ -7,21 +7,19 @@
    <h5><%= patient.name %></h5>
   
     <strong>Options:</strong>
-      
-<h6><button type="button" class="btn btn-info"><%= link_to 'Show', patient %></button></h6>
-   <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_patient_path(patient) %></button>
-   <button type="button" class="btn btn-danger"><%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %></button></li>
-      
-          <strong>Appointments:</strong>   
 
-    <button type="button" class="btn btn-info"><%= link_to "View ", patient_appointments_path(patient) %></button>
-    <button type="button" class="btn btn-success btn-sm"><%= link_to "New Appointment", new_patient_appointment_path(patient) %></button>
-        
-  
-     
+    <div>  
+     <button type="button" class="btn btn-default"><%= link_to 'Show', patient %></button>
+     <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_patient_path(patient) %></button>
+     <button type="button" class="btn btn-default"><%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+   </div>   
+          <strong>Appointments:</strong>   
+    <div>
+    <button type="button" class="btn btn-default"><%= link_to "View ", patient_appointments_path(patient) %></button>
+    <button type="button" class="btn btn-default"><%= link_to "New Appointment", new_patient_appointment_path(patient) %></button>
+   </div>    
     <% end %>
   
-
-</p>
-
+<div>
     <button type="button" class="btn btn-primary btn-sm"><%= link_to 'New Patient', new_patient_path %></button>
+</div>
