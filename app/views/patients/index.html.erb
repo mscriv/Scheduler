@@ -1,32 +1,27 @@
 <h4>Patients</h4>
 
-<table>
-  <thead>
-    <tr>
       <p>Name</p>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+     
     <% @patients.each do |patient| %>
-      <tr>
-        <h5><%= patient.name %></h5>
-        <ul>
-          <Strong>Options</strong>
-          <li><%= link_to 'Show', patient %></li>
-          <li><%= link_to 'Edit', edit_patient_path(patient) %></li>  
-          <li><%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-          <Strong>Appointments</strong>
-          <li><%= link_to "View ", patient_appointments_path(patient) %></li>
-          <li><%= link_to "Schedule", new_patient_appointment_path(patient) %></li> 
-        _______________________________________________________________________________________________
-        </ul>
-      </tr>
+   <p>   
+   <h5><%= patient.name %></h5>
+  
+    <strong>Options:</strong>
+      
+<h6><button type="button" class="btn btn-info"><%= link_to 'Show', patient %></button></h6>
+   <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_patient_path(patient) %></button>
+   <button type="button" class="btn btn-danger"><%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %></button></li>
+      
+          <strong>Appointments:</strong>   
+
+    <button type="button" class="btn btn-info"><%= link_to "View ", patient_appointments_path(patient) %></button>
+    <button type="button" class="btn btn-success btn-sm"><%= link_to "New Appointment", new_patient_appointment_path(patient) %></button>
+        
+  
+     
     <% end %>
-  </tbody>
-</table>
+  
 
-<br>
+</p>
 
-<%= link_to 'New Patient', new_patient_path %>
+    <button type="button" class="btn btn-primary btn-sm"><%= link_to 'New Patient', new_patient_path %></button>
