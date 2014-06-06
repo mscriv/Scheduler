@@ -1,4 +1,4 @@
-<h6>Enter patient name</h6>
+<h6>Enter patient name:</h6><p>(Select "Add Patient" if new)</p>
 <%= form_tag patients_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
@@ -18,17 +18,18 @@
      <p><strong>Options:</strong></p>
 
     <div class="meta">  
-      <%= link_to 'Show', patient %>  |
+     <p> <%= link_to 'Show', patient %>  |
       <span class="admin">
         <%= link_to 'Edit', edit_patient_path(patient) %> |
-        <%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %> 
       </span>
+     </p>
     </div>  
     
           
     <div>
-      <%= link_to "View Appointments", patient_appointments_path(patient) %> |
-      <%= link_to "New Appointment", new_patient_appointment_path(patient) %>
+      <%= link_to "Schedule an Appointment", new_patient_appointment_path(patient) %> |
+      <%= link_to "View Appointments", patient_appointments_path(patient) %> 
    </div>    
 </div>
       <% end %>
