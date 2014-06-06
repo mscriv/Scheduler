@@ -1,4 +1,4 @@
-<h4>Patients</h4>
+<h6>Enter patient name</h6>
 <%= form_tag patients_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
@@ -11,21 +11,25 @@
 </div>
 
     <% @patients.each do |patient| %>
-   <p>   
-   <h5><%= patient.name %></h5>
-  
-    <strong>Options:</strong>
+   <div class="patient">   
+     <p><strong><%= patient.name %></strong></p>
+     
+   
+     <p><strong>Options:</strong></p>
 
-    <div>  
-     <button type="button" class="btn btn-default"><%= link_to 'Show', patient %></button>
-     <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_patient_path(patient) %></button>
-     <button type="button" class="btn btn-default"><%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %></button>
-   </div>   
-          <strong>Appointments:</strong>   
+    <div class="meta">  
+      <%= link_to 'Show', patient %>  |
+      <span class="admin">
+        <%= link_to 'Edit', edit_patient_path(patient) %> |
+        <%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </span>
+    </div>  
+    
+          
     <div>
-    <button type="button" class="btn btn-default"><%= link_to "View ", patient_appointments_path(patient) %></button>
-      <button type="button" class="btn btn-default"><%= link_to "New Appointment", new_patient_appointment_path(patient) %></button>
+      <%= link_to "View Appointments", patient_appointments_path(patient) %> |
+      <%= link_to "New Appointment", new_patient_appointment_path(patient) %>
    </div>    
-______________________________________________________________________________________
-    <% end %>
+</div>
+      <% end %>
   
